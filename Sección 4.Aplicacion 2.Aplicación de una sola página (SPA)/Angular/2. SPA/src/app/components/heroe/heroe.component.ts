@@ -18,7 +18,6 @@ export class HeroeComponent implements OnInit {
       // De la siguiente forma se obtienen los parámetros: params['id']
       // Con esto se recupera el héroe indicado por id
       this.heroe = this._heroesService.getHeroe(params['id']);
-      console.log(this.heroe);
     });
   }
 

@@ -68,6 +68,22 @@ export class HeroesService {
   getHeroe(index:string):Heroe {
     return this.heroes[index];
   }
+
+	// Función que retorna el héroe con el nombre recibido por parámetro
+	buscarHeroes(termino:string):Heroe[] {
+		let heroesArr:Heroe[] = [];
+		termino = termino.toLowerCase();
+
+    for(let heroe of this.heroes) {
+      let nombre:string = heroe.nombre.toLowerCase();
+      if (nombre.indexOf(termino) >= 0) {
+        // Se ha encontrado el término en el nombre del héroe
+        heroesArr.push(heroe);
+      }
+    }
+
+    return heroesArr;
+	}
 }
 
 export interface Heroe {
