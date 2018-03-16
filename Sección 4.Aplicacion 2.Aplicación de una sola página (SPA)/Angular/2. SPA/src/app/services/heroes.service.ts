@@ -59,8 +59,14 @@ export class HeroesService {
 		console.log("Servicio listo para usar!!!");
 	}
 
+	// Functión que retorna los héroes
   getHeroes():Heroe[] {
     return this.heroes;
+  }
+
+  // Función que retorna el héroe con el id recibido por parámetro
+  getHeroe(index:string):Heroe {
+    return this.heroes[index];
   }
 }
 
