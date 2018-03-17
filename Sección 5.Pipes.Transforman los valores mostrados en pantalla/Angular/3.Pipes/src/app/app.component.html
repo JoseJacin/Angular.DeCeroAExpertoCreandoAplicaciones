@@ -13,6 +13,7 @@
 	  </thead>
 	  <tbody>
 	    <tr>
+				<!-- ################################ -->
 				<!-- uppercase: Convertir el texto en mayúsculas -->
 				<td>{{ texto }}</td>
 				<td>uppercase</td>
@@ -24,6 +25,7 @@
 				<td>lowercase</td>
 	      <td>{{ texto | uppercase }}</td>
 	    </tr>
+			<!-- ################################ -->
 			<tr>
 				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
 				array_or_string_expression | slice:start[:end]
@@ -64,6 +66,7 @@
 				<td>slice:0:3</td>
 				<td>{{ array | slice:0:3 }}</td>
 			</tr>
+			<!-- ################################ -->
 			<tr>
 				<!-- number: Formatea un número según las reglas locales
 				number_expression | number[:digitInfo[:locale]]
@@ -102,6 +105,46 @@
 				<td>{{ pi }}</td>
 				<td>number:'1.0-2'</td>
 				<td>{{ pi | number:'1.0-2' }}</td>
+			</tr>
+			<!-- ################################ -->
+			<tr>
+				<!-- percent: Formatea un número como un porcentaje según las reglas locales
+				number_expression | percent[:digitInfo[:locale]]
+				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+				minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+				minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+				maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
+				Si no se le indican parámetros:
+				Retorna el número Retorna un number con máximo 1 digito entero, con mínimo 0 decimales y máximo 2 decimales -->
+				<td>{{ a }}</td>
+				<td>percent</td>
+				<td>{{ a | percent }}</td>
+			</tr>
+			<tr>
+				<!-- percent: Formatea un número como un porcentaje según las reglas locales
+				number_expression | percent[:digitInfo[:locale]]
+				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+				minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+				minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+				maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
+				Si se le indican parámetros siempre tienen que tener el formato indicado
+				Retorna un number con máximo 1 digito entero, con mínimo 0 decimales y máximo 2 decimales -->
+				<td>{{ a }}</td>
+				<td>percent:'1.0-2'</td>
+				<td>{{ a | percent:'1.0-2' }}</td>
+			</tr>
+			<tr>
+				<!-- percent: Formatea un número como un porcentaje según las reglas locales
+				number_expression | percent[:digitInfo[:locale]]
+				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+				minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+				minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+				maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
+				Si se le indican parámetros siempre tienen que tener el formato indicado
+				Retorna un number con máximo 2 digitos enteros, con mínimo 2 decimales y máximo 2 decimales -->
+				<td>{{ a }}</td>
+				<td>percent:'2.2-2'</td>
+				<td>{{ a | percent:'2.2-2' }}</td>
 			</tr>
 	  </tbody>
 	</table>
