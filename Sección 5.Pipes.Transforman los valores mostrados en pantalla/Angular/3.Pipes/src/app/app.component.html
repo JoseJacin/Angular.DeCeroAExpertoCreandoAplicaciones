@@ -26,6 +26,7 @@
 	    </tr>
 			<tr>
 				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
+				array_or_string_expression | slice:start[:end]
 				Con cadenas. Si se le indica un sólo parámetro:
 				Retorna una cadena desde la posición indicada por el parámetro hasta el final de la cadena -->
 				<!-- Las posiciones se empiezan a contar desde la 0 -->
@@ -35,6 +36,7 @@
 			</tr>
 			<tr>
 				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
+				array_or_string_expression | slice:start[:end]
 				Con cadenas. Si se le indican dos parámetros:
 				Retorna una cadena desde la posición indicada por el primer parámetro hasta la posición indicada por el segundo parámetro
 				Las posiciones se empiezan a contar desde la 0 -->
@@ -44,6 +46,7 @@
 			</tr>
 			<tr>
 				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
+				array_or_string_expression | slice:start[:end]
 				Con array. Si se le indica un sólo parámetro:
 				Retorna un array desde la posición indicada por el parámetro hasta el final del array
 				Las posiciones se empiezan a contar desde la 0 -->
@@ -53,6 +56,7 @@
 			</tr>
 			<tr>
 				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
+				array_or_string_expression | slice:start[:end]
 				Con array. Si se le indican dos parámetros:
 				Retorna un array desde la posición indicada por el primer parámetro hasta la posición indicada por el segundo parámetro
 				Las posiciones se empiezan a contar desde la 0 -->
@@ -60,12 +64,52 @@
 				<td>slice:0:3</td>
 				<td>{{ array | slice:0:3 }}</td>
 			</tr>
+			<tr>
+				<!-- number: Formatea un número según las reglas locales
+				number_expression | number[:digitInfo[:locale]]
+				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+				minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+				minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+				maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
+				Si no se le indican parámetros:
+				Retorna un number con el mismo valor y con máximo 3 decimales -->
+				<td>{{ pi }}</td>
+				<td>number</td>
+				<td>{{ pi | number }}</td>
+			</tr>
+			<tr>
+				<!-- number: Formatea un número según las reglas locales
+				number_expression | number[:digitInfo[:locale]]
+				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+				minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+				minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+				maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
+				Si se le indican parámetros siempre tienen que tener el formato indicado
+				Retorna un number con máximo 3 digitos enteros, con mínimo 0 decimales y máximo 0 decimales -->
+				<td>{{ pi }}</td>
+				<td>number:'3.0-0'</td>
+				<td>{{ pi | number:'3.0-0' }}</td>
+			</tr>
+			<tr>
+				<!-- number: Formatea un número según las reglas locales
+				number_expression | number[:digitInfo[:locale]]
+				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+				minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+				minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+				maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
+				Si se le indican parámetros siempre tienen que tener el formato indicado
+				Retorna un number con máximo 1 digito entero, con mínimo 0 decimales y máximo 2 decimales -->
+				<td>{{ pi }}</td>
+				<td>number:'1.0-2'</td>
+				<td>{{ pi | number:'1.0-2' }}</td>
+			</tr>
 	  </tbody>
 	</table>
 
 	<h4>Slice</h4>
 	<ul>
 		<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
+		array_or_string_expression | slice:start[:end]
 		Con array. Si se le indican dos parámetros:
 		Retorna un array desde la posición indicada por el primer parámetro hasta la posición indicada por el segundo parámetro
 		Las posiciones se empiezan a contar desde la 0 -->
