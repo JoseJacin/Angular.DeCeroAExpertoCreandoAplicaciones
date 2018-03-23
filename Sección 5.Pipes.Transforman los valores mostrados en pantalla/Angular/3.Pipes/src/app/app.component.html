@@ -12,253 +12,204 @@
 	    </tr>
 	  </thead>
 	  <tbody>
+			<!-- ################################ -->
+			<!-- uppercase: Convertir el texto en mayúsculas -->
 	    <tr>
-				<!-- ################################ -->
-				<!-- uppercase: Convertir el texto en mayúsculas -->
 				<td>{{ texto }}</td>
 				<td>uppercase</td>
 	      <td>{{ texto | uppercase }}</td>
 	    </tr>
+			<!-- lowercase: Convertir texto en minúsculas -->
 			<tr>
-				<!-- lowercase: Convertir texto en minúsculas -->
 				<td>{{ texto }}</td>
 				<td>lowercase</td>
 	      <td>{{ texto | uppercase }}</td>
 	    </tr>
 			<!-- ################################ -->
+			<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
+			array_or_string_expression | slice:start[:end] -->
 			<tr>
-				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
-				array_or_string_expression | slice:start[:end]
-				Con cadenas. Si se le indica un sólo parámetro:
+				<!-- Con cadenas. Si se le indica un sólo parámetro:
 				Retorna una cadena desde la posición indicada por el parámetro hasta el final de la cadena -->
-				<!-- Las posiciones se empiezan a contar desde la 0 -->
 				<td>{{ texto }}</td>
 				<td>slice:3</td>
 				<td>{{ texto | slice:3 }}</td>
 			</tr>
 			<tr>
-				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
-				array_or_string_expression | slice:start[:end]
-				Con cadenas. Si se le indican dos parámetros:
-				Retorna una cadena desde la posición indicada por el primer parámetro hasta la posición indicada por el segundo parámetro
-				Las posiciones se empiezan a contar desde la 0 -->
+				<!-- Con cadenas. Si se le indican dos parámetros:
+				Retorna una cadena desde la posición indicada por el primer parámetro hasta la posición indicada por el segundo parámetro -->
 				<td>{{ texto }}</td>
 				<td>slice:0:3</td>
 				<td>{{ texto | slice:0:3 }}</td>
 			</tr>
 			<tr>
-				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
-				array_or_string_expression | slice:start[:end]
-				Con array. Si se le indica un sólo parámetro:
-				Retorna un array desde la posición indicada por el parámetro hasta el final del array
-				Las posiciones se empiezan a contar desde la 0 -->
+				<!-- Con array. Si se le indica un sólo parámetro:
+				Retorna un array desde la posición indicada por el parámetro hasta el final del array -->
 				<td>{{ array }}</td>
 				<td>slice:3</td>
 				<td>{{ array | slice:3 }}</td>
 			</tr>
 			<tr>
-				<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
-				array_or_string_expression | slice:start[:end]
-				Con array. Si se le indican dos parámetros:
-				Retorna un array desde la posición indicada por el primer parámetro hasta la posición indicada por el segundo parámetro
-				Las posiciones se empiezan a contar desde la 0 -->
+				<!-- Con array. Si se le indican dos parámetros:
+				Retorna un array desde la posición indicada por el primer parámetro hasta la posición indicada por el segundo parámetro -->
 				<td>{{ array }}</td>
 				<td>slice:0:3</td>
 				<td>{{ array | slice:0:3 }}</td>
 			</tr>
 			<!-- ################################ -->
+			<!-- number: Formatea un número según las reglas locales
+			number_expression | number[:digitInfo[:locale]]
+			digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+			minIntegerDigits es el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+			minFractionDigits es el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+			maxFractionDigits es la cantidad máxima de dígitos después de la fracción. Predeterminado a 3. -->
 			<tr>
-				<!-- number: Formatea un número según las reglas locales
-				number_expression | number[:digitInfo[:locale]]
-				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				Si no se le indican parámetros:
+				<!-- Si no se le indican parámetros:
 				Retorna un number con el mismo valor y con máximo 3 decimales -->
 				<td>{{ pi }}</td>
 				<td>number</td>
 				<td>{{ pi | number }}</td>
 			</tr>
 			<tr>
-				<!-- number: Formatea un número según las reglas locales
-				number_expression | number[:digitInfo[:locale]]
-				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				Si se le indican parámetros siempre tienen que tener el formato indicado
+				<!-- Si se le indican parámetros siempre tienen que tener el formato indicado
 				Retorna un number con máximo 3 digitos enteros, con mínimo 0 decimales y máximo 0 decimales -->
 				<td>{{ pi }}</td>
 				<td>number:'3.0-0'</td>
 				<td>{{ pi | number:'3.0-0' }}</td>
 			</tr>
 			<tr>
-				<!-- number: Formatea un número según las reglas locales
-				number_expression | number[:digitInfo[:locale]]
-				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				Si se le indican parámetros siempre tienen que tener el formato indicado
+				<!-- Si se le indican parámetros siempre tienen que tener el formato indicado
 				Retorna un number con máximo 1 digito entero, con mínimo 0 decimales y máximo 2 decimales -->
 				<td>{{ pi }}</td>
 				<td>number:'1.0-2'</td>
 				<td>{{ pi | number:'1.0-2' }}</td>
 			</tr>
 			<!-- ################################ -->
+			<!-- percent: Formatea un número como un porcentaje según las reglas locales
+			number_expression | percent[:digitInfo[:locale]]
+			digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+			minIntegerDigits es el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+			minFractionDigits es el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+			maxFractionDigits es la cantidad máxima de dígitos después de la fracción. Predeterminado a 3. -->
 			<tr>
-				<!-- percent: Formatea un número como un porcentaje según las reglas locales
-				number_expression | percent[:digitInfo[:locale]]
-				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				Si no se le indican parámetros:
+				<!-- Si no se le indican parámetros:
 				Retorna el número Retorna un number con máximo 1 digito entero, con mínimo 0 decimales y máximo 2 decimales -->
 				<td>{{ a }}</td>
 				<td>percent</td>
 				<td>{{ a | percent }}</td>
 			</tr>
 			<tr>
-				<!-- percent: Formatea un número como un porcentaje según las reglas locales
-				number_expression | percent[:digitInfo[:locale]]
-				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				Si se le indican parámetros siempre tienen que tener el formato indicado
+				<!-- Si se le indican parámetros siempre tienen que tener el formato indicado
 				Retorna un number con máximo 1 digito entero, con mínimo 0 decimales y máximo 2 decimales -->
 				<td>{{ a }}</td>
 				<td>percent:'1.0-2'</td>
 				<td>{{ a | percent:'1.0-2' }}</td>
 			</tr>
 			<tr>
-				<!-- percent: Formatea un número como un porcentaje según las reglas locales
-				number_expression | percent[:digitInfo[:locale]]
-				digitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				Si se le indican parámetros siempre tienen que tener el formato indicado
+				<!-- Si se le indican parámetros siempre tienen que tener el formato indicado
 				Retorna un number con máximo 2 digitos enteros, con mínimo 2 decimales y máximo 2 decimales -->
 				<td>{{ a }}</td>
 				<td>percent:'2.2-2'</td>
 				<td>{{ a | percent:'2.2-2' }}</td>
 			</tr>
 			<!-- ################################ -->
+			<!-- currency: Formatea un número como moneda usando las reglas de configuración regional
+			number_expression | currency[:currencyCode[:display[:digitInfo[:locale]]]]
+			currencyCode es el código de moneda ISO 4217, como USD (dólar estadounidense) y EUR (euro).
+			display indica si mostrar el símbolo de moneda o el código.
+			code: use el código (por ejemplo USD).
+			symbol(predeterminado): use el símbolo (por ejemplo $).
+			symbol-narrow: algunos países tienen dos símbolos para su moneda, uno regular y otro angosto (por ejemplo, el dólar canadiense CAD tiene el símbolo CA$ y el símbolo es angosto $).
+			boolean (obsoleto desde v5): truepara símbolo y falso para code Si no hay un símbolo angosto para la moneda elegida, se usará el símbolo regular.
+			ddigitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+			minIntegerDigits es el número mínimo de dígitos enteros para usar. Predeterminado a 1.
+			minFractionDigits es el número mínimo de dígitos después de la fracción. Predeterminado a 0.
+			maxFractionDigits es la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
+			locale es un string definición de la configuración regional a usar (utiliza la corriente LOCALE_ID de forma predeterminada) -->
 			<tr>
-				<!-- currency: Formatea un número como moneda usando las reglas de configuración regional
-				number_expression | currency[:currencyCode[:display[:digitInfo[:locale]]]]
-				currencyCode es el código de moneda ISO 4217, como USD (dólar estadounidense) y EUR (euro).
-				display indica si mostrar el símbolo de moneda o el código.
-					code: use el código (por ejemplo USD).
-					symbol(predeterminado): use el símbolo (por ejemplo $).
-					symbol-narrow: algunos países tienen dos símbolos para su moneda, uno regular y otro angosto (por ejemplo, el dólar canadiense CAD tiene el símbolo CA$y el símbolo es angosto $).
-					boolean (obsoleto desde v5): truepara símbolo y falso para code Si no hay un símbolo angosto para la moneda elegida, se usará el símbolo regular.
-				ddigitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				locale es un string definición de la configuración regional a usar (utiliza la corriente LOCALE_ID de forma predeterminada)
-				Retorna una cadena con el valor formateado a la moneda indicda. Es este caso es la moneda por defecto, Dollar pero además mostrándose el símbolo ($) -->
+				<!-- Retorna una cadena con el valor formateado a la moneda indicda. Es este caso es la moneda por defecto, Dollar pero además mostrándose el símbolo ($) -->
 				<td>{{ salario }}</td>
 				<td>currency</td>
 				<td>{{ salario | currency }}</td>
 			</tr>
 			<tr>
-				<!-- currency: Formatea un número como moneda usando las reglas de configuración regional
-				number_expression | currency[:currencyCode[:display[:digitInfo[:locale]]]]
-				currencyCode es el código de moneda ISO 4217, como USD (dólar estadounidense) y EUR (euro).
-				display indica si mostrar el símbolo de moneda o el código.
-					code: use el código (por ejemplo USD).
-					symbol(predeterminado): use el símbolo (por ejemplo $).
-					symbol-narrow: algunos países tienen dos símbolos para su moneda, uno regular y otro angosto (por ejemplo, el dólar canadiense CAD tiene el símbolo CA$y el símbolo es angosto $).
-					boolean (obsoleto desde v5): truepara símbolo y falso para code Si no hay un símbolo angosto para la moneda elegida, se usará el símbolo regular.
-				ddigitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				locale es un string definición de la configuración regional a usar (utiliza la corriente LOCALE_ID de forma predeterminada)
-				Retorna una cadena con el valor formateado a la moneda indicda. En este caso es EUR pero sin mostrar el símbolo -->
+				<!-- Retorna una cadena con el valor formateado a la moneda indicda. En este caso es EUR pero sin mostrar el símbolo -->
 				<td>{{ salario }}</td>
 				<td>currency:'EUR':false</td>
 				<td>{{ salario | currency:'EUR':false }}</td>
 			</tr>
 			<tr>
-				<!-- currency: Formatea un número como moneda usando las reglas de configuración regional
-				number_expression | currency[:currencyCode[:display[:digitInfo[:locale]]]]
-				currencyCode es el código de moneda ISO 4217, como USD (dólar estadounidense) y EUR (euro).
-				display indica si mostrar el símbolo de moneda o el código.
-					code: use el código (por ejemplo USD).
-					symbol(predeterminado): use el símbolo (por ejemplo $).
-					symbol-narrow: algunos países tienen dos símbolos para su moneda, uno regular y otro angosto (por ejemplo, el dólar canadiense CAD tiene el símbolo CA$y el símbolo es angosto $).
-					boolean (obsoleto desde v5): truepara símbolo y falso para code Si no hay un símbolo angosto para la moneda elegida, se usará el símbolo regular.
-				ddigitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				locale es un string definición de la configuración regional a usar (utiliza la corriente LOCALE_ID de forma predeterminada)
-				Retorna una cadena con el valor formateado a la moneda indicda. En este caso es EUR pero mostrando el símbolo (€) -->
+				<!-- Retorna una cadena con el valor formateado a la moneda indicda. En este caso es EUR pero mostrando el símbolo (€) -->
 				<td>{{ salario }}</td>
 				<td>currency:'EUR':true</td>
 				<td>{{ salario | currency:'EUR':true }}</td>
 			</tr>
 			<tr>
-				<!-- currency: Formatea un número como moneda usando las reglas de configuración regional
-				number_expression | currency[:currencyCode[:display[:digitInfo[:locale]]]]
-				currencyCode es el código de moneda ISO 4217, como USD (dólar estadounidense) y EUR (euro).
-				display indica si mostrar el símbolo de moneda o el código.
-					code: use el código (por ejemplo USD).
-					symbol(predeterminado): use el símbolo (por ejemplo $).
-					symbol-narrow: algunos países tienen dos símbolos para su moneda, uno regular y otro angosto (por ejemplo, el dólar canadiense CAD tiene el símbolo CA$y el símbolo es angosto $).
-					boolean (obsoleto desde v5): truepara símbolo y falso para code Si no hay un símbolo angosto para la moneda elegida, se usará el símbolo regular.
-				ddigitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				locale es un string definición de la configuración regional a usar (utiliza la corriente LOCALE_ID de forma predeterminada)
-				Retorna una cadena con el valor formateado a la moneda indicda. En este caso 4 dígitos enteros junto con la moneda es EUR pero mostrando el símbolo (€) -->
+				<!-- Retorna una cadena con el valor formateado a la moneda indicda. En este caso 4 dígitos enteros junto con la moneda es EUR pero mostrando el símbolo (€) -->
 				<td>{{ salario }}</td>
 				<td>currency:'EUR':true:'4.0-0'</td>
 				<td>{{ salario | currency:'EUR':true:'4.0-0' }}</td>
 			</tr>
 			<tr>
-				<!-- currency: Formatea un número como moneda usando las reglas de configuración regional
-				number_expression | currency[:currencyCode[:display[:digitInfo[:locale]]]]
-				currencyCode es el código de moneda ISO 4217, como USD (dólar estadounidense) y EUR (euro).
-				display indica si mostrar el símbolo de moneda o el código.
-					code: use el código (por ejemplo USD).
-					symbol(predeterminado): use el símbolo (por ejemplo $).
-					symbol-narrow: algunos países tienen dos símbolos para su moneda, uno regular y otro angosto (por ejemplo, el dólar canadiense CAD tiene el símbolo CA$y el símbolo es angosto $).
-					boolean (obsoleto desde v5): truepara símbolo y falso para code Si no hay un símbolo angosto para la moneda elegida, se usará el símbolo regular.
-				ddigitInfo es un string que tiene un siguiente formato: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
-					minIntegerDigitses el número mínimo de dígitos enteros para usar. Predeterminado a 1.
-					minFractionDigitses el número mínimo de dígitos después de la fracción. Predeterminado a 0.
-					maxFractionDigitses la cantidad máxima de dígitos después de la fracción. Predeterminado a 3.
-				locale es un string definición de la configuración regional a usar (utiliza la corriente LOCALE_ID de forma predeterminada)
-				Retorna una cadena con el valor formateado a la moneda indicda. En este caso tantos dígitos enteros como tenga el número y 2 como mínimo y máximo de decimales -->
+				<!-- Retorna una cadena con el valor formateado a la moneda indicda. En este caso tantos dígitos enteros como tenga el número y 2 como mínimo y máximo de decimales -->
 				<td>{{ salario }}</td>
 				<td>number:'.2-2'</td>
 				<td>{{ salario | number:'.2-2' }}</td>
 			</tr>
 			<!-- ################################ -->
+			<!-- JSON: Convierte el valor en cadena JSON
+			expression | json -->
 			<tr>
-				<!-- JSON: Convierte el valor en cadena JSON
-				expression | json
-				Retorna una cadena con el valor formateado a la moneda indicda. Es este caso es la moneda por defecto, Dollar pero además mostrándose el símbolo ($) -->
+				<!-- Retorna una cadena con el valor formateado a la moneda indicda. Es este caso es la moneda por defecto, Dollar pero además mostrándose el símbolo ($) -->
 				<td>{{ salario }}</td>
 				<td>currency</td>
 				<td>{{ salario | currency }}</td>
 			</tr>
 			<!-- ################################ -->
+			<!-- Async: Desenrolla un valor de una primitiva asincrónica
+			observable_or_promise_expression | async -->
 			<tr>
-				<!-- Async: Desenrolla un valor de una primitiva asincrónica
-				observable_or_promise_expression | async
-				Retorna una cadena con el valor formateado a la moneda indicda. Es este caso es la moneda por defecto, Dollar pero además mostrándose el símbolo ($) -->
+				<!-- Retorna una cadena con el valor formateado a la moneda indicda. Es este caso es la moneda por defecto, Dollar pero además mostrándose el símbolo ($) -->
 				<td>{{ valorDePromesa | async }}</td>
 				<td>Async</td>
 				<td>{{ valorDePromesa | async }}</td>
+			</tr>
+			<!-- ################################ -->
+			<!-- date: Formatea una fecha de acuerdo con las reglas locales
+			date_expression | date[:format[:timezone[:locale]]]
+			expression es un objeto de fecha o un número (milisegundos desde la época UTC) o una cadena ISO ( https://www.w3.org/TR/NOTE-datetime ).
+			format indica qué componentes de fecha / hora incluir. El formato se puede predefinir como se muestra a continuación (se proporcionan todos los ejemplos en-US) o personalizar como se muestra en la tabla.
+				'short': equivalente a (por ejemplo )'M/d/yy, h:mm a'6/15/15, 9:03 AM
+				'medium': equivalente a (por ejemplo )'MMM d, y, h:mm:ss a'Jun 15, 2015, 9:03:01 AM
+				'long': equivalente a (por ejemplo )'MMMM d, y, h:mm:ss a z'June 15, 2015 at 9:03:01 AM GMT+1
+				'full': equivalente a (por ejemplo )'EEEE, MMMM d, y, h:mm:ss a zzzz'Monday, June 15, 2015 at 9:03:01 AM GMT+01:00
+				'shortDate': equivalente a 'M/d/yy'(por ejemplo 6/15/15)
+				'mediumDate': equivalente a 'MMM d, y'(por ejemplo Jun 15, 2015)
+				'longDate': equivalente a 'MMMM d, y'(por ejemplo June 15, 2015)
+				'fullDate': equivalente a 'EEEE, MMMM d, y'(por ejemplo Monday, June 15, 2015)
+				'shortTime': equivalente a (por ejemplo )'h:mm a'9:03 AM
+				'mediumTime': equivalente a (por ejemplo )'h:mm:ss a'9:03:01 AM
+				'longTime': equivalente a (por ejemplo )'h:mm:ss a z'9:03:01 AM GMT+1
+				'fullTime': equivalente a (por ejemplo )'h:mm:ss a zzzz'9:03:01 AM GMT+01:00
+			timezone para ser utilizado para formatear. Comprende UTC / GMT y las abreviaturas de zona horaria continental de EE. UU., Pero para uso general, use un desplazamiento de zona horaria, por ejemplo, '+0430'(4 horas, 30 minutos al este del meridiano de Greenwich) Si no se especifica, la zona horaria del sistema local del final -el navegador del usuario será utilizado.
+			locale es una string definición de la configuración regional a usar (utiliza la corriente LOCALE_ID de forma predeterminada) -->
+			<tr>
+				<!-- Retorna una cadena con el valor de la fecha formateada con los parámetros por defecto -->
+			  <td>{{ fecha }}</td>
+			  <td>date</td>
+			  <td>{{ fecha | date }}</td>
+			</tr>
+			<tr>
+				<!-- Retorna una cadena con el valor de la fecha formateada según el parámetro medium ('MMM d, y, h:mm:ss a')-->
+				<td>{{ fecha }}</td>
+				<td>date:'medium'</td>
+				<td>{{ fecha | date:'medium' }}</td>
+			</tr>
+			<tr>
+				<!-- Retorna una cadena con el valor de la fecha formateada según los parámetros indicados (MMMM - dd) -->
+				<td>{{ fecha }}</td>
+				<td>date:'MMMM - dd'</td>
+				<td>{{ fecha | date:'MMMM - dd' }}</td>
 			</tr>
 	  </tbody>
 	</table>
