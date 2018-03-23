@@ -242,11 +242,17 @@
 				<td>number:'.2-2'</td>
 				<td>{{ salario | number:'.2-2' }}</td>
 			</tr>
+			<!-- ################################ -->
+			<tr>
+				<!-- JSON: Convierte el valor en cadena JSON
+				expression | json
+				Retorna una cadena con el valor formateado a la moneda indicda. Es este caso es la moneda por defecto, Dollar pero además mostrándose el símbolo ($) -->
+				<td>{{ salario }}</td>
+				<td>currency</td>
+				<td>{{ salario | currency }}</td>
+			</tr>
 	  </tbody>
 	</table>
-
-
-
 
 	<h4>Slice</h4>
 	<ul>
@@ -257,5 +263,15 @@
 		Las posiciones se empiezan a contar desde la 0 -->
 		<li *ngFor="let item of array | slice:5:20">{{ item }}</li>
 	</ul>
+
+	<h4>JSON</h4>
+		<!-- Muestra el objeto JSON -->
+		{{ heroe | json }}
+
+	<h4>JSON</h4>
+	<!-- Muestra el objeto JSON con formato de tabulación -->
+	<pre>
+		{{ heroe | json }}
+	</pre>
 
 </div>
