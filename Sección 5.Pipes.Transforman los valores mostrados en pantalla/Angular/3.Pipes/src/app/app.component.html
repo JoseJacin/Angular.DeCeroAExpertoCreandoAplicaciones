@@ -251,6 +251,15 @@
 				<td>currency</td>
 				<td>{{ salario | currency }}</td>
 			</tr>
+			<!-- ################################ -->
+			<tr>
+				<!-- Async: Desenrolla un valor de una primitiva asincrónica
+				observable_or_promise_expression | async
+				Retorna una cadena con el valor formateado a la moneda indicda. Es este caso es la moneda por defecto, Dollar pero además mostrándose el símbolo ($) -->
+				<td>{{ valorDePromesa | async }}</td>
+				<td>Async</td>
+				<td>{{ valorDePromesa | async }}</td>
+			</tr>
 	  </tbody>
 	</table>
 
