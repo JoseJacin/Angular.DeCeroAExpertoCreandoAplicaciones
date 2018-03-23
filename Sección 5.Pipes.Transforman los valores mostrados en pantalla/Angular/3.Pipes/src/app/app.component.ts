@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  texto:string = "José Sánchez Rodríguez";
+  nombre:string = "José Sánchez Rodríguez";
+  nombre2:string = "jOSé sáNChez rodRÍguez";
   array = [1,2,3,4,5,6,7,8,9,10];
   pi = Math.PI;
   a = 0.234;

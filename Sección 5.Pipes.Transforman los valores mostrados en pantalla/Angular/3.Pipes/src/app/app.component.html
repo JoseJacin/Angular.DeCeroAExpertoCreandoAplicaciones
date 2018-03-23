@@ -15,15 +15,15 @@
 			<!-- ################################ -->
 			<!-- uppercase: Convertir el texto en mayúsculas -->
 	    <tr>
-				<td>{{ texto }}</td>
+				<td>{{ nombre }}</td>
 				<td>uppercase</td>
-	      <td>{{ texto | uppercase }}</td>
+	      <td>{{ nombre | uppercase }}</td>
 	    </tr>
 			<!-- lowercase: Convertir texto en minúsculas -->
 			<tr>
-				<td>{{ texto }}</td>
+				<td>{{ nombre }}</td>
 				<td>lowercase</td>
-	      <td>{{ texto | uppercase }}</td>
+	      <td>{{ nombre | uppercase }}</td>
 	    </tr>
 			<!-- ################################ -->
 			<!-- slice: Crea una nueva lista o cadena que contiene un subconjunto (porción) de los elementos
@@ -31,16 +31,16 @@
 			<tr>
 				<!-- Con cadenas. Si se le indica un sólo parámetro:
 				Retorna una cadena desde la posición indicada por el parámetro hasta el final de la cadena -->
-				<td>{{ texto }}</td>
+				<td>{{ nombre }}</td>
 				<td>slice:3</td>
-				<td>{{ texto | slice:3 }}</td>
+				<td>{{ nombre | slice:3 }}</td>
 			</tr>
 			<tr>
 				<!-- Con cadenas. Si se le indican dos parámetros:
 				Retorna una cadena desde la posición indicada por el primer parámetro hasta la posición indicada por el segundo parámetro -->
-				<td>{{ texto }}</td>
+				<td>{{ nombre }}</td>
 				<td>slice:0:3</td>
-				<td>{{ texto | slice:0:3 }}</td>
+				<td>{{ nombre | slice:0:3 }}</td>
 			</tr>
 			<tr>
 				<!-- Con array. Si se le indica un sólo parámetro:
@@ -210,6 +210,26 @@
 				<td>{{ fecha }}</td>
 				<td>date:'MMMM - dd'</td>
 				<td>{{ fecha | date:'MMMM - dd' }}</td>
+			</tr>
+			<!-- ################################ -->
+			<!-- Pipes personalizados -->
+			<!-- capitalizado: Formatea la cadena capitalizando la primera letra de la cadena o la primera letra de cada palabra
+			string_expression | boolean]
+			boolean indica si se tiene que capitalar la primera letra de la cadena o la primera letra de cada palabra. Por defecto es true -->
+			observable_or_promise_expression | async -->
+			<tr>
+				<!-- Si no se le indican parámetros
+				Retorna una cadena con la primera letra de cada palabra en mayúsculas -->
+				<td>{{ nombre2 }}</td>
+				<td>capitalizado</td>
+				<td>{{ nombre2 | capitalizado }}</td>
+			</tr>
+			<tr>
+				<!-- Si se le indican parámetros
+				Retorna una cadena con solo la primera letra en mayúsculas -->
+				<td>{{ nombre2 }}</td>
+				<td>capitalizado</td>
+				<td>{{ nombre2 | capitalizado }}</td>
 			</tr>
 	  </tbody>
 	</table>
