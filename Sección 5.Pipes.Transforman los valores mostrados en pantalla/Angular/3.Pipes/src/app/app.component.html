@@ -231,6 +231,32 @@
 				<td>capitalizado</td>
 				<td>{{ nombre2 | capitalizado }}</td>
 			</tr>
+			<!-- ################################ -->
+			<!-- Pipes personalizados -->
+			<!-- Practica3 - Pipes -->
+			<!-- contrasena: Formatea la cadena sustituyendo los caracteres por *
+			string_expression | boolean]
+			boolean indica si se tiene que "encriptar" la cadena o no. Por defecto es true -->
+			<tr>
+				<!-- Si no se le indican parámetros
+				Retorna una cadena "encriptada" con * -->
+				<td>{{ nombre }}</td>
+				<td>contrasena</td>
+				<td>{{ nombre | contrasena }}</td>
+			</tr>
+			<tr>
+				<!-- Si se le indican parámetros:
+				Retorna una cadena "encriptada" o no con * -->
+				<td>{{ nombre }}</td>
+				<td>contrasena:{{ activar }}
+					<br>
+					<button
+						(click)="activar = !activar"
+						type="button"
+						class="btn btn-outline-primary">Activar/desactivar</button>
+				</td>
+				<td>{{ nombre | contrasena:activar }}</td>
+			</tr>
 	  </tbody>
 	</table>
 

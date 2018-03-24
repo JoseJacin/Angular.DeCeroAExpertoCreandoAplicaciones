@@ -11,7 +11,7 @@ export class CapitalizadoPipe implements PipeTransform {
 		let nombres = value.split(" ");
 
 		if (todas) {
-			for(let i  in nombres) {
+			for(let i in nombres) {
 				nombres[i] = nombres[i][0].toUpperCase() + nombres[i].substr(1);
 			}
 		} else {
