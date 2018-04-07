@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SpotifyService {
@@ -14,9 +15,12 @@ export class SpotifyService {
 		let url = 'https://api.spotify.com/v1/search?query=metallica&type=artist&limit=20';
 
 		let headers = new HttpHeaders({
-			'authorization': 'Bearer BQDr-VMSVnuP6T3nvbnI_-ns8bV-asZ0O3_33vohY1H83WiRShcf3h807iIwvWa2h0AZxlI1_ohCpVrp-Rw'
+			'authorization': 'Bearer BQCPWl0QWKRLPIKKj-d0Z2qWLqCievrlAoQ9TuIprHdJgZcuIdCvZ45_ZYF5BbIFAd81bdvDlIdMKsGx9D8'
 		});
 
-		return this.http.get(url, {headers});
+		return this.http.get(url, {headers}).map((resp: any) => {
+			this.artistas = resp.artists.items;
+			return this.artistas;
+		});
 	}
 }
