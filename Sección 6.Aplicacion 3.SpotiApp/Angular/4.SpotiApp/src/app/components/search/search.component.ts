@@ -17,9 +17,6 @@ export class SearchComponent {
       return;
     }
 
-    this._spotify.getArtistas(this.termino).subscribe(artistas => {
-      console.log('Información lista!');
-      console.log(artistas);
-    });
+    this._spotify.getArtistas(this.termino).subscribe();
   }
 }
