@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
+import { SinfotoPipe } from './pipes/sinfoto.pipe';
+
 //Services
 import { SpotifyService } from './services/spotify.service';
 
@@ -18,7 +20,8 @@ import { SpotifyService } from './services/spotify.service';
     AppComponent,
     HomeComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    SinfotoPipe
   ],
   imports: [
     BrowserModule,
