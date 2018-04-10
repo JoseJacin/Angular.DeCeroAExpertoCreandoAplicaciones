@@ -1,7 +1,47 @@
 <div class="container top30">
-  <td>
-    <tr>
-      <img [src]= alt="">
-    </tr>
-  </td>
+  <div class="row">
+    <div class="col-md-3">
+        <img class="img-thumbnail img-circle"
+             [src]="artista.images | sinfoto" alt="">
+    </div>
+    <div class="col-md-9">
+      <h1>{{artista.name}}</h1>
+      <hr>
+
+      <a [href]="artista.external_urls?.spotify" target="_blank" type="button" class="btn btn-outline-success">Abrir Spotify</a>
+      <button routerLink="/search" type="button" class="btn btn-outline-danger">Regresar</button>
+
+    </div>
+  </div>
+
+  <div class="row top30">
+    <div class="col-md-12">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Popularidad</th>
+            <th>Escuchar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cancion of canciones; let i = index">
+            <td>{{i+1}}</td>
+            <td>
+              <img class="img-50" [src]="cancion.album.images | sinfoto " alt="">
+            </td>
+            <td>{{cancion.name}}</td>
+            <td>{{cancion.popularity}}%</td>
+            <td>
+              <audio controls>
+                <source [src]="cancion.preview_url" type="audio/mpeg">
+              </audio>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
