@@ -7,7 +7,7 @@ export class SpotifyService {
 
 	artistas:any[] = [];
 	urlSpotify:string = 'https://api.spotify.com/v1/';
-	token:string = 'BQAV4P2V7TA5TCpndedCCJqhEVdHWwTIAmA81Im3ObVXtZQx3hvnOhn81-MnflEmDqs9LimjwEgOO0D79eQ';
+	token:string = 'BQBRl_81FS6d3IttVWxFn2ZGOVUwEdxSFhMkwTXB7ou1-0pNiIM5zxySfdSHehI1JC-YC8BjR7tx6xnO2lg';
 
   constructor(public http:HttpClient) {
 		console.log("Servicio de Spotify listo");
@@ -21,12 +21,20 @@ export class SpotifyService {
 		return headers;
 	}
 
+	getTop(id:string) {
+		let url = `${this.urlSpotify}artists/${id}/top-tracks?country=US`;
+
+		let headers = this.getHeaders();
+
+		return this.http.get(url, {headers});
+	}
+
 	getArtista(id:string) {
 		let url = `${this.urlSpotify}artists/${id}`;
 
 		let headers = this.getHeaders();
 
-		return this.http.get(url, {headers})
+		return this.http.get(url, {headers});
 		//.map((resp: any) => {
 			//this.artistas = resp.artists.items;
 			//return this.artistas;
