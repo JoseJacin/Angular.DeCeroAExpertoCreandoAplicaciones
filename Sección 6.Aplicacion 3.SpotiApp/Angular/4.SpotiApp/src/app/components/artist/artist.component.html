@@ -35,9 +35,10 @@
             <td>{{cancion.name}}</td>
             <td>{{cancion.popularity}}%</td>
             <td>
-              <audio controls>
+              <!-- <audio controls>
                 <source [src]="cancion.preview_url" type="audio/mpeg">
-              </audio>
+              </audio> -->
+              <iframe [src]="cancion.uri | domseguro:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </td>
           </tr>
         </tbody>
