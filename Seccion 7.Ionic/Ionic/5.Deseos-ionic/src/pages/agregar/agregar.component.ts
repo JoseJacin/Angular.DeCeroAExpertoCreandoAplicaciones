@@ -33,4 +33,8 @@ export class AgregarComponent implements OnInit {
     this.nombreItem = ""
   }
 
+  eliminar(index:number) {
+    this.items.splice(index);
+  }
+
 }
