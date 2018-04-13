@@ -20,7 +20,7 @@ export class AgregarComponent implements OnInit {
 
   ngOnInit() { }
 
-  agregar() {
+  agregarItem() {
     if(this.nombreItem.length == 0) {
       return;
     }
@@ -33,8 +33,8 @@ export class AgregarComponent implements OnInit {
     this.nombreItem = ""
   }
 
-  eliminar(index:number) {
-    this.items.splice(index);
+  eliminarItem(index:number) {
+    this.items.splice(index,1);
   }
 
 }
