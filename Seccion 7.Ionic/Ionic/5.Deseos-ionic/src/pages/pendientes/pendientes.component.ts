@@ -8,6 +8,7 @@ import { NavController } from 'ionic-angular';
 
 //Paginas
 import { AgregarComponent } from '../agregar/agregar.component';
+import { DetalleComponent } from '../detalle/detalle.component';
 
 @Component({
   selector: 'app-pendientes',
@@ -23,5 +24,9 @@ export class PendientesComponent implements OnInit {
 	irAgregar() {
     this.navCtrl.push(AgregarComponent);
 	}
+
+  verDetalle(lista, index) {
+    this.navCtrl.push(DetalleComponent, {lista,index});
+  }
 
 }
