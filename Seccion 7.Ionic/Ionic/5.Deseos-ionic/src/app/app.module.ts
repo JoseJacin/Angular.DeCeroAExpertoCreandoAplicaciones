@@ -16,7 +16,6 @@ import { ListaDeseosService } from './services/lista-deseos.service';
 //Pipe
 import { PlaceHolderPipe } from './pipes/placeholder.pipe';
 import { PendientesPipe } from './pipes/pendientes.pipe';
-import { FinalizadoPipe } from './pipes/finalizados.pipe';
 
 //Otros
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,7 +26,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     PlaceHolderPipe,
     PendientesPipe,
-    FinalizadoPipe,
     PendientesComponent,
     TerminadosComponent,
 		AgregarComponent,
