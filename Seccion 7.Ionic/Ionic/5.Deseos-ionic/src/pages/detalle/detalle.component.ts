@@ -26,24 +26,31 @@ export class DetalleComponent implements OnInit {
   actualizar(item:ListaItem) {
     item.completado = !item.completado;
 
+    let todosMarcados = true;
+
+    for(let item of this.lista.items) {
+      if(!item.completado) {
+        todosMarcados = false;
+        break;
+      }
+    }
+
+    this.lista.terminada = todosMarcados;
+
     this._listaDeseos.actualizarData();
   }
 
   borrarItem() {
     let confirm = this.alertCtrl.create({
-     title: 'Borrar lista',
+     title: this.lista.nombre,
      message: '¿Desea borrar esta lista?',
-     buttons: [
+     buttons: ['Cancelar',
        {
-         text: 'Cancelar',
+         text: 'Eliminar',
          handler: () => {
-           console.log('Disagree clicked');
-         }
-       },
-       {
-         text: 'Aceptar',
-         handler: () => {
-           console.log('Agree clicked');
+           //console.log('Agree clicked');
+           this._listaDeseos.eliminarLista(this.index);
+           this.navCtrl.pop();
          }
        }
      ]

@@ -38,4 +38,9 @@ export class ListaDeseosService {
     this.actualizarData();
   }
 
+	// Función que elimina la lista. En realidad la pone como terminada
+  eliminarLista(index:number) {
+    this.listas.splice(index,1);
+    this.actualizarData();
+  }
 }
