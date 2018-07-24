@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,14 +13,23 @@ export class HeroeTarjetaComponent implements OnInit {
 	@Input() heroe: any = {};
   @Input() indice: number;
 
-  constructor(private router: Router) { }
+  //Con el decorador @Output() se indica que la propiedad que tenga el decorador va a ser el evento que
+  // queremos que el padre esté escuchando. Se le debe indicar el tipo de dato que va a emitir
+  @Output() heroeSeleccionado: EventEmitter<number>
+
+  constructor(private router: Router) {
+    // Se inicializa el EventEmitter
+    this.heroeSeleccionado = new EventEmitter();
+  }
 
   ngOnInit() {
   }
 
   // Método con evento onClick
-  verHeroe(index:Number) {
-    this.router.navigate(['/heroe',this.indice]);
+  verHeroe() {
+    // Se indica al EventEmitter declarado que emita un evento y que lleve el valor indice
+    // Este evento lo recogerá el componente padre
+    this.heroeSeleccionado.emit(this.indice);
   }
 
 }
