@@ -74,9 +74,14 @@ export class HeroesService {
 		let heroesArr:Heroe[] = [];
 		termino = termino.toLowerCase();
 
-    for(let heroe of this.heroes) {
+    for(let i = 0; i < this.heroes.length; i++) {
+
+      let heroe = this.heroes[i];
+
       let nombre:string = heroe.nombre.toLowerCase();
       if (nombre.indexOf(termino) >= 0) {
+        // Se añade un índice
+        heroe.indice = i;
         // Se ha encontrado el término en el nombre del héroe
         heroesArr.push(heroe);
       }
@@ -91,5 +96,6 @@ export interface Heroe {
   bio:string,
   img:string,
   aparicion:string,
-  casa:string
+  casa:string,
+  indice?:number
 }

@@ -11,5 +11,5 @@
 
 <div class="card-columns">
 	<!-- Con esto se manda información del padre heroes.component al hijo heroe-tarjeta.component -->
-	<app-heroe-tarjeta [heroe]="heroe" [indice]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+	<app-heroe-tarjeta [componente]="buscador" [heroe]="heroe" [indice]="heroe.indice" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
 </div>

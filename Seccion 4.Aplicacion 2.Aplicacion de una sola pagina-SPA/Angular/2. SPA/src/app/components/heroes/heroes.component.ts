@@ -24,7 +24,8 @@ export class HeroesComponent implements OnInit {
   }
 
   // Método con evento onClick
-  verHeroe(index:Number) {
+  verHeroe(index:number) {
+  console.log(index);
     this.router.navigate(['/heroe',index]);
   }
 

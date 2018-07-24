@@ -5,5 +5,5 @@
   <!-- Con esto se manda información del padre heroes.component al hijo heroe-tarjeta.component -->
   <!-- Con (heroeSeleccionado)="verHeroe($event)" se indica que se quiere escuchar el evento heroeSeleccionado y que
   cuando llegue dicho evento se va a ejecutar la función verHeroe pasándole los datos recibidos desde el evento ($event) -->
-  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="heroe" [indice]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [componente]="heroes" [heroe]="heroe" [indice]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
 </div>
